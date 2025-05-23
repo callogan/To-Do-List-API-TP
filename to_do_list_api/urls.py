@@ -7,7 +7,7 @@ app_name = "to_do_list_api"
 
 router = DefaultRouter()
 
-router.register("to_do_list_api", TaskViewSet, basename="to-do-list-api")
+router.register(r"tasks", TaskViewSet, basename="task")
 
 urlpatterns = [
     path("", include(router.urls)),

@@ -25,7 +25,7 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include("to_do_list_api.urls")),
+    path("api/", include(("to_do_list_api.urls", "to_do_list_api"), namespace="tasks")),
     path(
         "api/token/",
         TokenObtainPairView.as_view(),
@@ -42,4 +42,3 @@ urlpatterns = [
         name="token_verify"
     ),
 ]
-
